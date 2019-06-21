@@ -1,6 +1,6 @@
 # blurts-wordcloud
 
-Scans the specified email using the HIBP API and calculates the data class frequency.
+Scans the specified email using the [HIBP API](https://haveibeenpwned.com/API/) and calculates the data class frequency.
 
 **NOTE:** This script only generates an array of word and frequency pairs. If you want to _graph_ the word cloud, you'll need to do something like https://codepen.io/anon/pen/pXROmy.
 
