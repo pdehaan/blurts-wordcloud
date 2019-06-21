@@ -1,0 +1,33 @@
+{
+  "name": "blurts-wordcloud",
+  "version": "1.0.0",
+  "author": "Peter deHaan",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^1.10.2",
+    "@typescript-eslint/parser": "^1.10.2",
+    "axios": "^0.19.0",
+    "eslint": "^5.16.0"
+  },
+  "devDependencies": {
+    "@types/node": "^12.0.8",
+    "rimraf": "^2.6.3",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.2"
+  },
+  "files": "dist/**/*.js",
+  "keywords": [],
+  "license": "MPL-2.0",
+  "bin": "dist/cli.js",
+  "main": "dist/lib.js",
+  "scripts": {
+    "build": "tsc",
+    "check": "tsc --noEmit",
+    "clean": "rimraf dist",
+    "prebuild": "npm run lint && npm run clean",
+    "prelint": "npm run check",
+    "format": "npm run lint -- --fix",
+    "lint": "eslint src/**/*.ts",
+    "start": "ts-node src/cli.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
