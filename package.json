@@ -1,7 +1,7 @@
 {
   "name": "@pdehaan/blurts-wordcloud",
   "description": "Scans the specified email using the HIBP API and calculates the data class frequency.",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "author": "Peter deHaan",
   "bin": {
     "blurts-wordcloud": "dist/cli.js"
