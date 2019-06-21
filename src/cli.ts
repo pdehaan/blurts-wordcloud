@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { scan, dataClassFrequency } from "./lib";
 
 async function main(email: string): Promise<void> {

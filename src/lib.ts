@@ -26,9 +26,15 @@ export interface WordCount {
 export type WordMap = Map<string, number>;
 
 export async function scan(email: string): Promise<Breach[]> {
-  const url = `https://haveibeenpwned.com/api/v2/breachedaccount/${email}`;
-  const breaches = await axios.get(new URL(url).href);
-  return breaches.data;
+  try {
+    const url = `https://haveibeenpwned.com/api/v2/breachedaccount/${email}`;
+    const breaches = await axios.get(new URL(url).href);
+    return breaches.data;
+  } catch (err) {
+    console.error(err.message);
+    process.exitCode = 1;
+    return [];
+  }
 }
 
 export async function dataClassFrequency(
