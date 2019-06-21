@@ -2,13 +2,32 @@
 
 Scans the specified email using the HIBP API and calculates the data class frequency.
 
+**NOTE:** This script only generates an array of word and frequency pairs. If you want to _graph_ the word cloud, you'll need to do something like https://codepen.io/anon/pen/pXROmy.
+
 ## Usage
+
+### CLI
 
 ```sh
 npx @pdehaan/blurts-wordcloud test@linkedin.com
 ```
 
-### Output
+### API
+
+```js
+// `npm i @pdehaan/blurts-wordcloud -S`
+const lib = require("@pdehaan/blurts-wordcloud");
+
+async function main() {
+  const breaches = await lib.scan("test@adobe.com");
+  const wordfreq = await lib.dataClassFrequency(breaches);
+  console.log(JSON.stringify(wordfreq, null, 2));
+}
+
+main();
+```
+
+## Output
 
 ```js
 [
